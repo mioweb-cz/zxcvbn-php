@@ -106,7 +106,7 @@ class L33tMatch extends DictionaryMatch
 
     /**
      * @param string $string
-     * @param array  $map
+     * @param array $map
      * @return string
      */
     protected static function translate($string, $map)
@@ -135,7 +135,7 @@ class L33tMatch extends DictionaryMatch
     protected static function getL33tSubtable($password)
     {
         // The preg_split call below is a multibyte compatible version of str_split
-        $passwordChars = array_unique(preg_split('//u', $password, null, PREG_SPLIT_NO_EMPTY));
+        $passwordChars = array_unique(preg_split('//u', $password, -1, PREG_SPLIT_NO_EMPTY));
 
         $subTable = [];
 
@@ -212,7 +212,7 @@ class L33tMatch extends DictionaryMatch
         $variations = 1;
 
         foreach ($this->sub as $substitution => $letter) {
-            $characters = preg_split('//u', mb_strtolower($this->token), null, PREG_SPLIT_NO_EMPTY);
+            $characters = preg_split('//u', mb_strtolower($this->token), -1, PREG_SPLIT_NO_EMPTY);
 
             $subbed = count(array_filter($characters, function ($character) use ($substitution) {
                 return (string)$character === (string)$substitution;

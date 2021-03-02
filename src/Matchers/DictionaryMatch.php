@@ -178,13 +178,14 @@ class DictionaryMatch extends BaseMatch
     protected static function getRankedDictionaries()
     {
         if (empty(self::$rankedDictionaries)) {
-            $json = file_get_contents(dirname(__FILE__) . '/frequency_lists.json');
+            $json = file_get_contents(__DIR__ . '/frequency_lists.json');
             $data = json_decode($json, true);
 
             $rankedLists = [];
             foreach ($data as $name => $words) {
                 $rankedLists[$name] = array_combine($words, range(1, count($words)));
             }
+
             self::$rankedDictionaries = $rankedLists;
         }
 
