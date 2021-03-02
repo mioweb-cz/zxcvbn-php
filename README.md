@@ -12,7 +12,7 @@ Zxcvbn-PHP is a password strength estimator using pattern matching and minimum e
 The library can be installed with [Composer](http://getcomposer.org) by adding it as a dependency to your composer.json file.
 
 Via the command line run:
-`composer require bjeavons/zxcvbn-php`
+`composer require bjeavons/zxcvbn-php:dev-master`
 
 Or in your composer.json add
 ```json

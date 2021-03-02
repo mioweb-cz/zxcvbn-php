@@ -30,12 +30,17 @@ passed data dir, or vice-versa.
 
 # maps dict name to num words. None value means "include all words"
 DICTIONARIES = dict(
-    us_tv_and_film    = 30000,
-    english_wikipedia = 30000,
-    passwords         = 30000,
-    surnames          = 10000,
-    male_names        = None,
-    female_names      = None,
+    en_us_tv_and_film    = 30000,
+    en_wikipedia = 30000,
+    en_passwords         = 30000,
+    en_surnames          = 10000,
+    en_male_names        = None,
+    en_female_names      = None,
+	cs = 30000,
+	cs_names = 23000,
+	cs_passwords = 25000,
+	cs_wikipedia = 8000,
+	cs_subtitles = 4000
 )
 
 # returns {list_name: {token: rank}}, as tokens and ranks occur in each file.

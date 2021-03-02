@@ -12,7 +12,7 @@ class ReverseDictionaryMatch extends DictionaryMatch
     /**
      * Match occurences of reversed dictionary words in password.
      *
-     * @param $password
+     * @param string $password
      * @param array $userInputs
      * @param array $rankedDictionaries
      * @return ReverseDictionaryMatch[]
@@ -39,7 +39,11 @@ class ReverseDictionaryMatch extends DictionaryMatch
         return parent::getRawGuesses() * 2;
     }
 
-    public function getFeedback($isSoleMatch)
+    /**
+     * @param bool $isSoleMatch
+     * @return mixed[]
+     */
+    public function getFeedback($isSoleMatch): array
     {
         $feedback = parent::getFeedback($isSoleMatch);
 
@@ -50,7 +54,7 @@ class ReverseDictionaryMatch extends DictionaryMatch
         return $feedback;
     }
 
-    public static function mbStrRev($string, $encoding = null)
+    public static function mbStrRev($string, $encoding = null): string
     {
         if ($encoding === null) {
             $encoding = mb_detect_encoding($string) ?: 'UTF-8';
